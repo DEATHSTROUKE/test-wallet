@@ -1,9 +1,15 @@
+import { viewport } from '@telegram-apps/sdk'
 import { TonConnectUIProvider } from '@tonconnect/ui-react'
+import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 
 import { MainPage } from './pages/MainPage/MainPage'
 
 export const App = () => {
+  useEffect(() => {
+    viewport.expand()
+  }, [])
+
   return (
     <div>
       <Toaster
