@@ -3,6 +3,7 @@ import {
   init,
   postEvent,
   retrieveLaunchParams,
+  viewport,
 } from '@telegram-apps/sdk'
 
 import CoinIcon from '@/assets/interface/coin.webp'
@@ -16,6 +17,8 @@ class EnvConfig {
   constructor() {
     try {
       init()
+      viewport.expand()
+
       const TG_PARAMS = retrieveLaunchParams()
       this.user = TG_PARAMS.initData?.user
       this.token = TG_PARAMS?.initDataRaw || ''
