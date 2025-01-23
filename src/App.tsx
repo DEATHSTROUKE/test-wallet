@@ -21,7 +21,7 @@ export const App = () => {
           },
         }}
       />
-      <TonConnectUIProvider manifestUrl="/tonconnect-manifest.json">
+      <TonConnectUIProvider manifestUrl="https://test-wallet-psi-taupe.vercel.app/tonconnect-manifest.json">
         <MainPage />
       </TonConnectUIProvider>
     </div>
