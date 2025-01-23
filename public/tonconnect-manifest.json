@@ -1,4 +1,5 @@
 {
   "url": "https://test-wallet-psi-taupe.vercel.app/",
-  "name": "Test wallet"
+  "name": "Test wallet",
+  "iconUrl": "https://ton.vote/logo.png"
 }
