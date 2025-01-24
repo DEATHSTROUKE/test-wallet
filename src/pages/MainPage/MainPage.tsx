@@ -43,12 +43,10 @@ export const MainPage = () => {
   useLayoutEffect(() => {
     init()
     cloudStorage.getItem('activeCards').then(data => {
-      console.info(data)
       if (data) {
-        console.info(JSON.parse(data))
         setActiveCards(JSON.parse(data))
-        setIsLoading(false)
       }
+      setIsLoading(false)
     })
   }, [])
 
@@ -77,8 +75,6 @@ export const MainPage = () => {
       `Unsubscribed to ${CARDS_DATA.find(card => card.id === cardId)?.title}`
     )
   }
-
-  console.info({ activeCards }, activeCards.includes(1))
 
   return (
     <div className="bg-gradient-to-b from-slate-900 to-slate-800 text-white">
