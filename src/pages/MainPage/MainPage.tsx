@@ -1,11 +1,11 @@
 import toast from 'react-hot-toast'
 
 import { Header } from '@/components/header/header'
+import { ConfirmDialog } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
 
 import { AlertsBlock } from './components/alerts-block'
 import { Card } from './components/card'
-import { ConfirmDialog } from './components/dialog'
 
 export const MainPage = () => {
   const handleSubscribe = (plan: string) => {

@@ -6,6 +6,7 @@ import {
 import { Wallet2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 
+import { ConfirmDialog } from '../ui/alert-dialog'
 import { Button } from '../ui/button'
 
 export const Header = () => {
@@ -32,10 +33,16 @@ export const Header = () => {
       <div className="max-w-md mx-auto flex justify-between items-center">
         <h1 className="text-xl font-bold">Subscription Hub</h1>
         {wallet ? (
-          <Button onClick={handleWalletDisconnect}>
-            <Wallet2 className="w-4 h-4" />
-            <span>Disconnect Wallet</span>
-          </Button>
+          <ConfirmDialog
+            title={'Are you sure you want to disconnect your wallet?'}
+            trigger={
+              <Button onClick={handleWalletDisconnect}>
+                <Wallet2 className="w-4 h-4" />
+                <span>Disconnect Wallet</span>
+              </Button>
+            }
+            action={handleWalletDisconnect}
+          />
         ) : (
           <Button onClick={open}>
             <Wallet2 className="w-4 h-4" />
