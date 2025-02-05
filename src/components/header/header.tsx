@@ -1,24 +1,25 @@
-import {
-  useTonConnectModal,
-  useTonConnectUI,
-  useTonWallet,
-} from '@tonconnect/ui-react'
+import { useTonConnectModal, useTonConnectUI } from '@tonconnect/ui-react'
 import { Wallet2 } from 'lucide-react'
+import { useEffect } from 'react'
 import toast from 'react-hot-toast'
+
+import { useContract } from '@/hooks/use-contract'
+import { useTonClient } from '@/hooks/use-ton-client'
+import { useTonConnect } from '@/hooks/use-ton-connect'
 
 import { ConfirmDialog } from '../ui/alert-dialog'
 import { Button } from '../ui/button'
 
 export const Header = () => {
   const { close, open, state } = useTonConnectModal()
-  const wallet = useTonWallet()
+  const { wallet } = useTonConnect()
   const [tonConnectUI] = useTonConnectUI()
 
-  console.info({ wallet })
+  const { getWalletData } = useContract()
 
-  const handleWalletConnect = () => {
-    toast.success('Wallet connected successfully')
-  }
+  // useEffect(() => {
+  //   getWalletData()
+  // }, [wallet])
 
   const handleWalletDisconnect = () => {
     toast.promise(tonConnectUI.disconnect(), {

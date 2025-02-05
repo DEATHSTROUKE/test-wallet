@@ -6,10 +6,8 @@ import {
   viewport,
 } from '@telegram-apps/sdk'
 
-import CoinIcon from '@/assets/interface/coin.webp'
-
 class EnvConfig {
-  usersApiUrl: string = import.meta.env.VITE_USERS_API_URL
+  papayaMasterAddress = 'kQCv-OaNLoPH796iqubWZPkR7ylQAXCfHit-WhlU7gHhWEP7'
   isDev = import.meta.env.DEV
   user: User | undefined = undefined
   token = ''
@@ -38,6 +36,29 @@ try {
   console.info(e)
 }
 
-export const CURRENCY_IMAGES = {
-  soft: CoinIcon,
-}
+export const CARDS_DATA = [
+  {
+    id: 1,
+    title: 'Support Kirill Malev',
+    subtitle: '$1 daily contribution',
+    amount: 1,
+    subscribeBtnText: 'Subscribe $1/day',
+    btnColor: 'redGradient',
+  },
+  {
+    id: 2,
+    title: 'Support UNICEF Daily',
+    subtitle: '$1 daily for children in need',
+    amount: 1,
+    subscribeBtnText: 'UNICEF - $1/day',
+    btnColor: 'blueGradient',
+  },
+  {
+    id: 3,
+    title: 'Support UNICEF Monthly',
+    subtitle: '$30 monthly commitment',
+    amount: 30,
+    subscribeBtnText: 'Subscribe $30/month',
+    btnColor: 'blueGradient',
+  },
+] as const
