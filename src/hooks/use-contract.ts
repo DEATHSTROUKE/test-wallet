@@ -57,13 +57,3 @@ export const useContract = () => {
 
   return { getWalletData, initJettonWallet }
 }
-
-// papayaMasterContract.sendMsg(
-//   sender,
-//   sender.address!,
-//   Address.parse(PAPAYA_CLIENT_ADDRESS),
-//   0,
-//   BigInt(0.1),
-//   1,
-//   Opcodes.subscribe
-// )

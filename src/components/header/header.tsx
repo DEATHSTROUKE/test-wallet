@@ -11,15 +11,9 @@ import { ConfirmDialog } from '../ui/alert-dialog'
 import { Button } from '../ui/button'
 
 export const Header = () => {
-  const { close, open, state } = useTonConnectModal()
+  const { open } = useTonConnectModal()
   const { wallet } = useTonConnect()
   const [tonConnectUI] = useTonConnectUI()
-
-  const { getWalletData } = useContract()
-
-  // useEffect(() => {
-  //   getWalletData()
-  // }, [wallet])
 
   const handleWalletDisconnect = () => {
     toast.promise(tonConnectUI.disconnect(), {
